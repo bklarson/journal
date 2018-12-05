@@ -1,0 +1,154 @@
+\begingroup
+\lstset{
+    backgroundcolor = \color{HeadMainBgMP},
+    basicstyle = \small,
+    aboveskip = 2pt,
+    belowskip = 2pt}
+
+% Reduce whitespace above/below subsubsections, to get everything to fit on a
+% single page
+\titlespacing*{\subsubsection}{0pt}{6pt}{2pt}
+
+\begin{multicols}{2}
+
+\subsubsection*{Create \& Clone}
+Create a new local repository
+\begin{lstlisting}
+$ git init
+\end{lstlisting}
+Clone an existing repository
+\begin{lstlisting}
+$ git clone ssh://server/r.git
+\end{lstlisting}
+
+\subsubsection*{Status}
+Changes made since last commit
+\begin{lstlisting}
+$ git status
+\end{lstlisting}
+Diff of changes to tracked files
+\begin{lstlisting}
+$ git diff
+\end{lstlisting}
+Changes between two branches
+\begin{lstlisting}
+$ git diff branchA branchB
+\end{lstlisting}
+
+\subsubsection*{Commit}
+Add changed file to staging
+\begin{lstlisting}
+$ git add <filename>
+\end{lstlisting}
+Add only part of file to staging
+\begin{lstlisting}
+$ git add -p <filename>
+\end{lstlisting}
+Commit staged changes
+\begin{lstlisting}
+$ git commit
+\end{lstlisting}
+Commit all changes to tracked files
+\begin{lstlisting}
+$ git commit -a
+\end{lstlisting}
+Update latest commit
+\begin{lstlisting}
+$ git commit --amend
+\end{lstlisting}
+
+\subsubsection*{History}
+View list of commits
+\begin{lstlisting}
+$ git log
+\end{lstlisting}
+View list in graphical form
+\begin{lstlisting}
+$ gitk --all
+\end{lstlisting}
+Who changed each line in <filename>
+\begin{lstlisting}
+$ git blame <filename>
+\end{lstlisting}
+
+\subsubsection*{Branches \& Tags}
+List all branches
+\begin{lstlisting}
+$ git branch -a
+\end{lstlisting}
+Switch current commit
+\begin{lstlisting}
+$ git checkout <branch/sha1>
+\end{lstlisting}
+Create a new local branch
+\begin{lstlisting}
+$ git branch <branch name>
+\end{lstlisting}
+Delete a local branch
+\begin{lstlisting}
+$ git branch -d <branch name>
+\end{lstlisting}
+List all tags
+\begin{lstlisting}
+$ git tag
+\end{lstlisting}
+Tag the current commit
+\begin{lstlisting}
+$ git tag -a <tag name>
+\end{lstlisting}
+
+\subsubsection*{Update \& Publish}
+List remote server(s)
+\begin{lstlisting}
+$ git remote -v
+\end{lstlisting}
+Download all changes from remote, but don't integrate.  Default remote name is 'origin'
+\begin{lstlisting}
+$ git fetch <remote>
+\end{lstlisting}
+Push local changes to a remote
+\begin{lstlisting}
+$ git push <remote> <branch>
+\end{lstlisting}
+Push current commit to Gerrit e.g.
+\begin{lstlisting}
+$ git push origin
+    HEAD:refs/for/master
+\end{lstlisting}
+Push all existing tags
+\begin{lstlisting}
+$ git push --tags
+\end{lstlisting}
+
+\subsubsection*{Other Tools}
+Merge a branch into your current HEAD
+\begin{lstlisting}
+$ git merge <branch>
+\end{lstlisting}
+Rebase your current commit onto <branch>
+\begin{lstlisting}
+$ git rebase <branch>
+\end{lstlisting}
+Use configured tool to solve merge conflicts
+\begin{lstlisting}
+$ git mergetool
+\end{lstlisting}
+Discard local change to specific file
+\begin{lstlisting}
+$ git checkout -- <file>
+\end{lstlisting}
+Discard all local changes
+\begin{lstlisting}
+$ git reset --hard
+\end{lstlisting}
+Find a commit that introduced a bug
+\begin{lstlisting}
+$ git bisect
+\end{lstlisting}
+
+\end{multicols}
+
+\begin{center} Git cheat sheet
+\end{center}
+
+\endgroup
