@@ -124,11 +124,21 @@ def write_out_i18n_macros(file):
 #--------------------------------------------------------------------
 # Generate & write out a config tex file for latex-specific configuration
 #
-# This just includes paper size at the moment
+# This includes paper size and counts of various pages
 
 def write_out_latex_config(file):
     config_FH = open(file, 'w')
     config_FH.writelines('\\geometry{' + cfg.paper_size + '}\n')
+    config_FH.writelines('\n')
+    config_FH.writelines('\\newcommand{\\numDotsPages}{' + str(cfg.num_dots_pages) + '}\n')
+    config_FH.writelines('\\newcommand{\\numTriangularDotsPages}{' + str(cfg.num_triangular_dots_pages) + '}\n')
+    config_FH.writelines('\\newcommand{\\numGraphPages}{' + str(cfg.num_graph_pages) + '}\n')
+    config_FH.writelines('\\newcommand{\\numBlankPages}{' + str(cfg.num_blank_pages) + '}\n')
+    config_FH.writelines('\\newcommand{\\numSmartphoneWireframePages}{' + str(cfg.num_smartphone_wireframe_pages) + '}\n')
+    config_FH.writelines('\\newcommand{\\enableColoringPages}{' + str(int(cfg.enable_coloring_pages)) + '}\n')
+    config_FH.writelines('\\newcommand{\\enableConstantsPage}{' + str(int(cfg.enable_constants_page)) + '}\n')
+    config_FH.writelines('\\newcommand{\\enableAsciiPage}{' + str(int(cfg.enable_ascii_page)) + '}\n')
+    config_FH.writelines('\\newcommand{\\enableNumbersPage}{' + str(int(cfg.enable_numbers_page)) + '}\n')
 
 #--------------------------------------------------------------------
 # generate one \MonthTbl<month_abbr> macro for the given month

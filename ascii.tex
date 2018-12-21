@@ -6,12 +6,11 @@
 %\usepackage{rotating}
 %\begin{document}
 
+\rpt[\enableAsciiPage]{
 
 \begin{table}[tbp]
   \centering
 \begin{sideways}
-%\resizebox{\textwidth}{!}{
-%\tiny
 \newcolumntype{R}{>{\ttfamily}r}
 \begin{tabular}{ R @{\hskip 4pt}R @{\hskip 10pt}l @{\hskip 4pt}| @{\hskip 4pt}R @{\hskip 4pt}R @{\hskip 10pt}l @{\hskip 4pt}| @{\hskip 4pt}R @{\hskip 4pt}R @{\hskip 10pt}l @{\hskip 4pt}| @{\hskip 4pt}R @{\hskip 4pt}R @{\hskip 10pt}l }
 Dec & Hex & \ttfamily Char                        & Dec & Hex & \ttfamily Char & Dec & Hex & \ttfamily Char & Dec & Hex & \ttfamily Char \\
@@ -50,11 +49,11 @@ Dec & Hex & \ttfamily Char                        & Dec & Hex & \ttfamily Char &
 31 & 1F & US (unit separator)           & 63 & 3F & ?      & 95 & 5F & \_ & 127 & 7F & DEL \\
 
   \end{tabular}
-%  }
   \end{sideways}
   \caption[]{\tabular[t]{@{}l@{}}ASCII Characters\endtabular}
   \label{tab:ascii}
 \end{table}
 
+}
 
 %\end{document}

@@ -35,3 +35,17 @@ Physical_Activity_locale = 'Exercise'
 events.add_event(year, 1, 1, "New Year's Day", True)
 events.add_event(year + 1, 1, 1, "New Year's Day", True)
 
+
+# Numbers of 'extra' pages
+# The standard pages (calendars, planners, OKRs, etc) take up 147 pages.
+# How many and what other pages should be included?
+num_dots_pages = 10
+num_triangular_dots_pages = 10
+num_graph_pages = 6
+num_blank_pages = 10
+num_smartphone_wireframe_pages = 4
+enable_coloring_pages = True # total of 9 pages
+enable_constants_page = True # some scientific constants
+enable_ascii_page = True # an ascii table
+enable_numbers_page = True # Country population / latency numbers
+

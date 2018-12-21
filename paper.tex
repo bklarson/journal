@@ -3,7 +3,7 @@
 \newdimen\tikzspacer
 \tikzspacer=18pt
 
-\rpt[10]{
+\rpt[\numDotsPages]{
 \section{dots}
 \newdimen\spaceleft
 \spaceleft=\dimexpr\textheight-\pagetotal-\tikzspacer\relax
@@ -19,7 +19,7 @@
   \end{tikzpicture}
   \pagebreak
 }
-\rpt[10]{
+\rpt[\numTriangularDotsPages]{
   \section{triangular}
   \newdimen\spaceleft
   \spaceleft=\dimexpr\textheight-\pagetotal-\tikzspacer\relax
@@ -38,7 +38,7 @@
   \end{tikzpicture}
   \pagebreak
 }
-\rpt[6]{
+\rpt[\numGraphPages]{
  \section{graph}
   \newdimen\spaceleft
   \spaceleft=\dimexpr\textheight-\pagetotal-\tikzspacer\relax
@@ -50,7 +50,7 @@
   \end{tikzpicture}
 \pagebreak
 }
-\rpt[10]{
+\rpt[\numBlankPages]{
  \section{blank}
 \pagebreak
 }

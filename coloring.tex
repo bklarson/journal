@@ -1,6 +1,8 @@
 % We don't want any outside margins for the color pages
 \newgeometry{inner=18mm,outer=0mm,top=0mm,bottom=0mm}
 
+\rpt[\enableColoringPages]{
+
 \includegraphics[width=\textwidth,height=\textheight]{./artwork/space}
 \cleardoublepage
 \includegraphics[width=\textwidth,height=\textheight]{./artwork/data_center}
@@ -9,5 +11,7 @@
 \cleardoublepage
 \includegraphics[width=\textwidth,height=\textheight]{./artwork/london}
 \cleardoublepage
+
+}
 
 \restoregeometry
