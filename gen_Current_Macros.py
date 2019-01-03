@@ -137,6 +137,7 @@ def write_out_latex_config(file):
     config_FH.writelines('\\newcommand{\\numSmartphoneWireframePages}{' + str(cfg.num_smartphone_wireframe_pages) + '}\n')
     config_FH.writelines('\\newcommand{\\enableColoringPages}{' + str(int(cfg.enable_coloring_pages)) + '}\n')
     config_FH.writelines('\\newcommand{\\enableGitCheatSheet}{' + str(int(cfg.enable_git_cheat_sheet)) + '}\n')
+    config_FH.writelines('\\newcommand{\\enableCppCheatSheet}{' + str(int(cfg.enable_cpp_cheat_sheet)) + '}\n')
     config_FH.writelines('\\newcommand{\\enableConstantsPage}{' + str(int(cfg.enable_constants_page)) + '}\n')
     config_FH.writelines('\\newcommand{\\enableAsciiPage}{' + str(int(cfg.enable_ascii_page)) + '}\n')
     config_FH.writelines('\\newcommand{\\enableNumbersPage}{' + str(int(cfg.enable_numbers_page)) + '}\n')

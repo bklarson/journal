@@ -1,0 +1,302 @@
+\begingroup
+
+\lstset{
+    backgroundcolor = \color{HeadMainBgMP},
+    basicstyle = \small,
+    aboveskip = 2pt,
+    belowskip = 2pt}
+
+
+\begin{center}
+\textbf{C++ STL Containers}
+\end{center}
+
+\begin{multicols}{2}
+
+\begin{lstlisting}
+std::array
+\end{lstlisting}
+An array - fastest option, size must be known at compile time
+\begin{lstlisting}
+std::vector
+\end{lstlisting}
+Dynamic array, lives on heap (calls malloc)
+\begin{lstlisting}
+std::deque
+\end{lstlisting}
+Double-ended queue. Very fast add/remove at start and end, slow access in middle.  Lives on heap
+\begin{lstlisting}
+std::list
+\end{lstlisting}
+Doubly-linked list.  All content lives on the heap (malloc per insertion)
+\begin{lstlisting}
+std::forward_list
+\end{lstlisting}
+Singly-linked list, slightly more efficient
+
+\begin{lstlisting}
+std::set, std::multiset
+\end{lstlisting}
+Collection of keys, sorted in a tree.  Multiset allows duplicates.  O(log n) lookup
+\begin{lstlisting}
+std::map, std::multimap
+\end{lstlisting}
+Collection of key-value pairs, sorted in a tree.  Multiset allows duplicate keys.  O(log n) lookup
+
+\begin{lstlisting}
+std::unordered_set, _map,
+_multiset, _multimap
+\end{lstlisting}
+Unordered hash-based versions of the above.  Typically O(1) lookup
+
+\begin{lstlisting}
+std::stack, std::queue
+\end{lstlisting}
+A LIFO (stack) and FIFO (queue) on top of a std::deque
+
+\begin{lstlisting}
+std::priority_queue
+\end{lstlisting}
+A sorted list on a std::vector
+
+\begin{lstlisting}
+std::bitset
+\end{lstlisting}
+A sequence of bits, number of bits specified at compile time
+\end{multicols}
+
+On most modern architectures, contiguious containers (array, vector) are faster
+than any other container, even when adding/removing from the middle, due to
+cache performance.
+
+\begin{center}
+\textbf{C++ STL Algorithms}
+\end{center}
+\begin{multicols}{2}
+
+\begin{lstlisting}
+all_of, any_of, none_of
+\end{lstlisting}
+Check if a predicate is true for all, any, or none of the elements
+\begin{lstlisting}
+for_each, transform
+\end{lstlisting}
+Apply function to a range of elements.  transform stores outputs in a new range
+\begin{lstlisting}
+count, count_if
+\end{lstlisting}
+Return number of elements satisfying criteria
+\begin{lstlisting}
+find, find_if, find_if_not
+\end{lstlisting}
+Finds first element satisfying specific criteria
+\begin{lstlisting}
+mismatch
+\end{lstlisting}
+Finds first position where two ranges differ
+\begin{lstlisting}
+search
+\end{lstlisting}
+Find a sequence of elements
+\begin{lstlisting}
+find_end
+\end{lstlisting}
+Finds the last sequence of elements
+\begin{lstlisting}
+find_first_of
+\end{lstlisting}
+Finds first of any one of a set of elements
+\begin{lstlisting}
+adjacent_find
+\end{lstlisting}
+Finds the first two adjacent items that satisfy predicate
+\begin{lstlisting}
+search_n
+\end{lstlisting}
+Finds first sequence of n which satisfy predicate
+\begin{lstlisting}
+copy, copy_if, copy_n,
+copy_backward
+\end{lstlisting}
+Copies elements to a new location
+\begin{lstlisting}
+move, move_backward
+\end{lstlisting}
+Same as copy, but uses std::move on each element
+\begin{lstlisting}
+fill, fill_n,
+generate, generate_n
+\end{lstlisting}
+Fills a range with a given value (fill) or result of a function call (generate)
+\begin{lstlisting}
+iota
+\end{lstlisting}
+Fill a range with successive increments of a starting value
+\begin{lstlisting}
+remove, remove_if
+\end{lstlisting}
+Removes elements which satisfy specific criteria
+\begin{lstlisting}
+remove_copy, remove_copy_if
+\end{lstlisting}
+Copies elements, omitting those which satisfy specific criteria
+\begin{lstlisting}
+replace, replace_if
+\end{lstlisting}
+Replaces all values satisfying specific criteria
+\begin{lstlisting}
+replace_copy, replace_copy_if
+\end{lstlisting}
+Copies elements, replacing those which satisfy specific criteria
+\begin{lstlisting}
+swap, iter_swap, swap_ranges
+\end{lstlisting}
+Swaps the values/elements pointed to by iterators/ranges
+\begin{lstlisting}
+reverse, reverse_copy
+\end{lstlisting}
+Reverses the order of elements, into a new range for \_copy
+\begin{lstlisting}
+rotate, rotate_copy
+\end{lstlisting}
+Rotates order of elements, into a new range for \_copy
+\begin{lstlisting}
+shuffle
+\end{lstlisting}
+Randomly re-orders elements
+\begin{lstlisting}
+unique, unique_copy
+\end{lstlisting}
+Removes consecutive duplicates, into a new range for \_copy
+\begin{lstlisting}
+partition, partition_copy,
+stable_partition
+\end{lstlisting}
+Sort a range into two groups, into a new range for \_copy, preserving relative
+order for stable\_
+\begin{lstlisting}
+is_partitioned
+\end{lstlisting}
+Checks if a range is partitioned into 2 groups
+\begin{lstlisting}
+partition_point
+\end{lstlisting}
+Find the separating point in a partitioned range
+\begin{lstlisting}
+sort, stable_sort,
+partial_sort, partial_sort_copy
+\end{lstlisting}
+Sorts a (partial\_) range, keeping relative order for stable\_, into a new range
+for \_copy
+\begin{lstlisting}
+is_sorted
+\end{lstlisting}
+Check if the range is sorted
+\begin{lstlisting}
+is_sorted_until
+\end{lstlisting}
+Find the first item which isn't sorted
+\begin{lstlisting}
+nth_element
+\end{lstlisting}
+Partially sort a range, partitioning it by a specified position
+\begin{lstlisting}
+lower_bound, upper_bound
+\end{lstlisting}
+Find the element >= (lower\_bound) or > (upper\_bound) a specified value in a
+sorted range
+\begin{lstlisting}
+binary_search
+\end{lstlisting}
+Check if a value exists in a sorted range
+\begin{lstlisting}
+equal_range
+\end{lstlisting}
+Finds subset of sorted range where all items equal specified value
+\begin{lstlisting}
+merge, inplace_merge
+\end{lstlisting}
+Merges two sorted ranges, in-place for inplace\_
+\begin{lstlisting}
+set_difference,
+set_intersection, set_union,
+set_symmetric_difference
+\end{lstlisting}
+Computes the difference, intersection, untion, and symmetric difference between
+two sets
+\begin{lstlisting}
+includes
+\end{lstlisting}
+Returns true if one set is a subset of another
+\begin{lstlisting}
+make_heap
+\end{lstlisting}
+Creates a max heap out of a range
+\begin{lstlisting}
+is_heap
+\end{lstlisting}
+Returns true if the range is a max heap
+\begin{lstlisting}
+is_heap_until
+\end{lstlisting}
+Find the first item which isn't a max heap
+\begin{lstlisting}
+push_heap
+\end{lstlisting}
+Adds an element to a heap
+\begin{lstlisting}
+pop_heap
+\end{lstlisting}
+Removes largest element from a heap
+\begin{lstlisting}
+sort_heap
+\end{lstlisting}
+Turns a heap into a sorted range
+\begin{lstlisting}
+max, max_element,
+min, min_element
+\end{lstlisting}
+Returns the largest/smallest of the given values (in a range for \_element)
+\begin{lstlisting}
+minmax, minmax_element
+\end{lstlisting}
+Returns the largest and smallest of the given values (in a range for \_element)
+\begin{lstlisting}
+equal
+\end{lstlisting}
+Return true if two ranges' contents are equal
+\begin{lstlisting}
+lexicographical_compare
+\end{lstlisting}
+Returns true if one range is lexicographically less than another
+\begin{lstlisting}
+is_permutation
+\end{lstlisting}
+Determines if a sequence is a permutation of another sequence
+\begin{lstlisting}
+next_permutation,
+prev_permutation
+\end{lstlisting}
+Generate the next/previous permutation or a sequence
+\begin{lstlisting}
+accumulate
+\end{lstlisting}
+Sum up a range
+\begin{lstlisting}
+inner_product
+\end{lstlisting}
+Computes sum of products of two ranges
+\begin{lstlisting}
+adjacent_difference
+\end{lstlisting}
+Store difference between each adjacent element in range
+\begin{lstlisting}
+partial_sum
+\end{lstlisting}
+Store partial sum of range
+
+
+
+\end{multicols}
+
+\endgroup
